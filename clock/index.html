@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Clock !</title>
+
+    <script
+            src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous"></script>
+    <style>
+        #special-banner-promo-code {
+            background: red;
+            display: none;
+        }
+        h2  {
+            text-align: center;
+            text-transform: uppercase;
+            padding: 20px;
+        }
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+        #special-banner-promo-code p {
+            text-align: center;
+            display: block;
+            padding: 20px;
+        }
+    </style>
+
+    <script>
+        (() => {
+            console.log('Setting up clock scripts')
+            setInterval(() => {
+                const now = new Date()
+                $('#hour').html(now.toLocaleString())
+
+                const current_hour = now.getHours()
+                const current_mn= now.getMinutes()
+                if (current_hour > 11 && (current_hour <= 13 && current_mn <= 59)) {
+                    $('#special-banner-promo-code').show()
+                } else {
+                    $('#special-banner-promo-code').hide()
+                }
+            }, 100)
+        })()
+    </script>
+</head>
+<body>
+    <h1>Hey, ceci est un fabulous site</h1>
+    <div id="special-banner-promo-code">
+        <h2>On a faim !</h2>
+        <div>
+            <img width="200" src="https://burgerkingfrance.twic.pics/img/products/1/dc/1dc2c4b2-3731-4ec2-8e70-02f259c7fe67_?twic=v1/contain=700x700" alt="">
+        </div>
+        <p>Promo code : <b><span id="promo-code">BIGTASTYBURGER2023</span></b></p>
+    </div>
+    <p>Entre 12h et 14h, une bannière va s'afficher avec un code promo pour avoir une remise sur nos fabulous goodygood burgers</p>
+    <p>Heure : <span id="hour"></span></p>
+</body>
+</html>
