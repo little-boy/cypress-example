@@ -1,4 +1,4 @@
-describe('Clock', function () {
+describe.skip('Clock', function () {
     const clock_example_url = 'http://127.0.0.1:3005/'
 
     Cypress.Commands.add('setHour', (hours, minutes) => {

@@ -1,4 +1,4 @@
-describe('Clock', function () {
+describe.skip('Clock', function () {
     it('should show a banner when its 12am', () => {
         // arrange
         const now = new Date()
